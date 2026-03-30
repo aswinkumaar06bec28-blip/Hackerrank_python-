@@ -1,0 +1,10 @@
+# Read input numbers a, b, c, and d from separate lines
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate the result of (a^b) + (c^d) and print it
+# Python automatically handles arbitrarily large integers, so no special libraries are needed.
+result = (a**b) + (c**d)
+print(result)
