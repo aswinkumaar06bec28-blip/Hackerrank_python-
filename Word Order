@@ -1,0 +1,20 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+
+# Read all input at once
+input = sys.stdin.read().splitlines()
+if not input:
+    exit()
+
+n = int(input[0])
+words = input[1:]
+
+word_counts = {}
+# Using dict to keep order (Python 3.7+)
+for word in words:
+    word_counts[word] = word_counts.get(word, 0) + 1
+
+# Output the number of distinct words
+print(len(word_counts))
+# Output the counts in order of appearance
+print(*(word_counts.values()))
