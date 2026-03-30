@@ -1,0 +1,8 @@
+import calendar
+month_str, day_str, year_str = input().split()
+month = int(month_str)
+day = int(day_str)
+year = int(year_str)
+day_of_week_num = calendar.weekday(year, month, day)
+day_of_week_name = calendar.day_name[day_of_week_num].upper()
+print(day_of_week_name)
