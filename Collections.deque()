@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+import sys
+
+# Read the number of operations
+n = int(sys.stdin.readline())
+d = deque()
+
+# Perform operations
+for _ in range(n):
+    # Read operation line
+    line = sys.stdin.readline().split()
+    cmd = line[0]
+    
+    # Execute methods based on command name
+    if cmd == 'append':
+        d.append(line[1])
+    elif cmd == 'appendleft':
+        d.appendleft(line[1])
+    elif cmd == 'pop':
+        d.pop()
+    elif cmd == 'popleft':
+        d.popleft()
+
+# Print the final space-separated elements
+print(*(d))
