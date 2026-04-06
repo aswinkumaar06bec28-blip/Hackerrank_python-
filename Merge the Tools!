@@ -1,0 +1,22 @@
+def merge_the_tools(s, k):
+    # Iterate through the string in steps of k
+    for i in range(0, len(s), k):
+        # Extract the substring of length k
+        substring = s[i:i+k]
+        
+        # Track seen characters and build the unique subsequence
+        unique_chars = []
+        seen = set()
+        
+        for char in substring:
+            if char not in seen:
+                unique_chars.append(char)
+                seen.add(char)
+        
+        # Print the resulting string for this block
+        print("".join(unique_chars))
+
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
