@@ -1,0 +1,19 @@
+import string
+def print_rangoli(size):
+    # your code goes here
+    alphabet = string.ascii_lowercase
+    lines = []
+    
+    for i in range(size):
+        # Slice the alphabet for the current line
+        # e.g., for size 5, i=0 gives ['e'], i=1 gives ['e', 'd']
+        s = "-".join(alphabet[size-1 : size-i-1 : -1] + alphabet[size-i-1 : size])
+        
+        # Center the string with hyphens based on the max width
+        width = 4 * size - 3
+        lines.append(s.center(width, "-"))
+    
+    # Mirror the top half to create the bottom half
+    rangoli = "\n".join(lines + lines[:-1][::-1])
+    print(rangoli)
+
