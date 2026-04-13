@@ -1,0 +1,18 @@
+from collections import Counter
+
+def get_logo_chars(s):
+    # Count frequency of each character
+    counts = Counter(s)
+    
+    # Sort: 
+    # 1. By frequency (descending: -x[1])
+    # 2. By character (alphabetical: x[0])
+    sorted_chars = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+    
+    # Print the top three
+    for char, count in sorted_chars[:3]:
+        print(f"{char} {count}")
+
+if __name__ == '__main__':
+    s = input().strip()
+    get_logo_chars(s)
