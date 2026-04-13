@@ -1,0 +1,8 @@
+def print_full_name(first, last):
+    # Use an f-string to inject the variables directly into the sentence
+    print(f"Hello {first} {last}! You just delved into python.")
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
