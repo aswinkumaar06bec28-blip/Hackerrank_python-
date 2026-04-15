@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    # Read n and m (we don't strictly need n, but we consume it)
+    n, m = map(int, input().split())
+    
+    # Read the main array
+    storage = input().split()
+    
+    # Read sets A and B - converting them to sets is CRUCIAL for speed
+    set_a = set(input().split())
+    set_b = set(input().split())
+    
+    happiness = 0
+    
+    # Iterate through the array and update happiness
+    for i in storage:
+        if i in set_a:
+            happiness += 1
+        elif i in set_b:
+            happiness -= 1
+            
+    print(happiness)
