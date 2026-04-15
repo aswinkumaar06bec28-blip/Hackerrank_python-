@@ -1,0 +1,27 @@
+from itertools import product
+
+if __name__ == '__main__':
+    # Read K (number of lists) and M (the modulo value)
+    k, m = map(int, input().split())
+    
+    # Store our optimized lists
+    lists = []
+    
+    for _ in range(k):
+        # Read the line and split it into strings
+        line = input().split()
+        
+        # line[0] is the number of elements, so we slice with [1:] to get just the numbers
+        elements = [int(x) for x in line[1:]]
+        
+        # Square each number, apply modulo M, and store in a set to remove duplicates
+        squared_mod = set((x**2) % m for x in elements)
+        
+        # Add this optimized set to our main list
+        lists.append(squared_mod)
+        
+    # Generate all combinations using product(*lists)
+    # Sum each combination, apply modulo M again, and find the maximum result
+    result = max(sum(combo) % m for combo in product(*lists))
+    
+    print(result)
