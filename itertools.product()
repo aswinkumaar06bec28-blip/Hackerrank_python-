@@ -1,0 +1,11 @@
+from itertools import product
+
+if __name__ == '__main__':
+    # Read the two lines of input, split them by space, and map them to integers
+    # Converting them directly to lists
+    A = list(map(int, input().split()))
+    B = list(map(int, input().split()))
+    
+    # Compute the Cartesian product
+    # The '*' operator unpacks the resulting tuples and prints them separated by spaces
+    print(*product(A, B))
