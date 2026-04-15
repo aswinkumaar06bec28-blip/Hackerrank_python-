@@ -1,0 +1,21 @@
+import cmath
+
+def print_polar_coordinates(complex_num):
+    # Calculate the modulus (r)
+    # This is the distance from the origin: sqrt(x^2 + y^2)
+    r = abs(complex_num)
+    
+    # Calculate the phase (phi)
+    # This is the counter-clockwise angle from the positive x-axis
+    phi = cmath.phase(complex_num)
+    
+    # Print the results
+    print(r)
+    print(phi)
+
+if __name__ == '__main__':
+    # Read the complex number from standard input
+    # The strip() ensures any accidental leading/trailing spaces are removed
+    z = complex(input().strip())
+    
+    print_polar_coordinates(z)
