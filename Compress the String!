@@ -1,0 +1,15 @@
+from itertools import groupby
+
+if __name__ == '__main__':
+    s = input()
+    
+    # groupby(s) returns (key, group) for each consecutive identical element
+    # key: the character (e.g., '2')
+    # group: an iterator containing the consecutive occurrences
+    for key, group in groupby(s):
+        # We need the count of occurrences, which is just the length of the group
+        count = len(list(group))
+        
+        # Format as (count, key) and print with a space between them
+        # We convert key to int as per the sample output format
+        print(f"({count}, {int(key)})", end=" ")
