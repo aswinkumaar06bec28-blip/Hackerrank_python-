@@ -1,0 +1,35 @@
+from collections import deque
+
+def solve():
+    # Read number of cubes
+    n = int(input())
+    # Convert input list into a deque for efficient popping from both ends
+    cubes = deque(map(int, input().split()))
+    
+    # Initialize the current top of the pile with a very large number
+    last_stacked = float('inf')
+    
+    # Process all cubes
+    while cubes:
+        # Identify the larger of the two available ends
+        if cubes[0] >= cubes[-1]:
+            current_pick = cubes.popleft()
+        else:
+            current_pick = cubes.pop()
+            
+        # Check if the picked cube is valid (smaller or equal to the previous)
+        if current_pick <= last_stacked:
+            last_stacked = current_pick
+        else:
+            # If we pick a cube larger than the one on top, stacking is impossible
+            print("No")
+            return
+            
+    # If the loop finishes, all cubes were stacked correctly
+    print("Yes")
+
+if __name__ == '__main__':
+    # Read number of test cases
+    t = int(input())
+    for _ in range(t):
+        solve()
