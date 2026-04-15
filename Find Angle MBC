@@ -1,0 +1,10 @@
+import math
+
+ab = int(input())
+bc = int(input())
+
+# Calculate the angle in degrees
+angle_deg = math.degrees(math.atan2(ab, bc))
+
+# Round it and print with the hex degree symbol
+print(f"{round(angle_deg)}\xb0")
